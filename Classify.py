@@ -8,7 +8,7 @@ print("Load Model")
 model = load_model("model.h5")
 lb = pickle.loads(open("labelku.lb", "rb").read())
 
-image = cv2.imread("dataset/awan/awan1.jpg")
+image = cv2.imread("testAnjing.jpg")
 tampil = image.copy()
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 image = cv2.resize(image, (224, 224)).astype("float32")
