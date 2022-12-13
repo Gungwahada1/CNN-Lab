@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import pickle
 
 # create constanta
-LABELS = set(["anjing", "awan", "monitor"])
+LABELS = set(["awan", "golden", "husky", "monitor", "pitbull"])
 
 # load image in path
 print("Load Gambar .......")
@@ -48,7 +48,7 @@ labels = lb.fit_transform(labels)
                                                   test_size=0.2,
                                                   random_state=20)
 
-setepoch = 10
+setepoch = 20
 # ------------
 model = models.Sequential()
 model.add(layers.Conv2D(32, (3, 3), activation="relu", input_shape=(224, 224, 3)))
@@ -58,7 +58,7 @@ model.add(layers.MaxPooling2D((2, 2)))
 # ------------
 model.add(layers.Flatten())
 model.add(layers.Dense(64, activation='relu'))
-model.add(layers.Dense(3, activation='softmax'))
+model.add(layers.Dense(5, activation='softmax'))
 
 model.compile(optimizer='adam',
               loss='categorical_crossentropy',
